@@ -3,7 +3,9 @@ name: draft-commit
 description: Analyzes staged git changes and generates a commit message without committing. Accepts an optional language argument: "zh" for Traditional Chinese (Taiwan), defaults to English. Usage: /draft-commit [zh]
 ---
 
-Run `git diff --staged` and `git diff --staged --stat` to see all staged changes.
+First, run `git rev-parse --show-toplevel` to get the git root of the current working directory. Use this path as `<repo-root>` for all subsequent git commands.
+
+Run `git -C <repo-root> diff --staged` and `git -C <repo-root> diff --staged --stat` to see all staged changes.
 
 Check if the user passed "zh" as an argument:
 - **No argument** → write the commit message in **English**
@@ -20,4 +22,4 @@ Also display the commit message in a code block.
 
 **Do NOT run `git commit`.**
 
-If there are no staged changes, tell the user and suggest running `git add` first.
+If there are no staged changes, tell the user and suggest running `git add` first (in the correct `<repo-root>`).
