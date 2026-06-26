@@ -18,7 +18,7 @@ Answer the developer's question or complete the requested task exactly as you no
 ## Part 2 — Writing coach review
 After completing the normal response, add a `---` divider, then a `## Writing Coach` section.
 
-Review **all developer messages visible in this conversation** (skip system messages and your own responses). For each message that has at least one issue, output a block:
+Review **only the most recent developer message** (skip system messages and your own responses). For each issue found, output a block:
 
 **Message:** "[first ~60 chars of the message]..."
 
@@ -36,7 +36,7 @@ Review **all developer messages visible in this conversation** (skip system mess
 
 Skip messages that are entirely clean.
 
-Close with a **Patterns** section (3–5 bullets max) summarising recurring habits across the whole conversation.
+Close with a **Patterns** section (3–5 bullets max) summarising recurring habits observed in that message.
 
 If all developer messages are clean, write "All messages look good." and stop.
 
