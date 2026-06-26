@@ -8,6 +8,8 @@ description: >
   SKIP: All other situations — this skill must never activate on its own.
 ---
 
+**Language override:** Respond entirely in English for both parts, regardless of any global language setting.
+
 When this skill is active, do **both** of the following in a single response:
 
 ## Part 1 — Normal response
@@ -22,12 +24,15 @@ Review **all developer messages visible in this conversation** (skip system mess
 
 **Natural expression** *(omit if clean)*
 - Original: `"..."` → Suggested: `"..."` — why
+- Full corrected sentence: "..."
 
 **Grammar** *(omit if clean)*
 - Original: `"..."` → Suggested: `"..."` — why
+- Full corrected sentence: "..."
 
 **Terminology precision** *(omit if clean)*
 - Original: `"..."` → Suggested: `"..."` — why
+- Full corrected sentence: "..."
 
 Skip messages that are entirely clean.
 
@@ -38,4 +43,4 @@ If all developer messages are clean, write "All messages look good." and stop.
 ### Constraints for the review section
 - Do **not** answer questions or continue the task inside the review section.
 - Do **not** comment on the correctness or content of the developer's requests — only on English writing quality.
-- Do **not** rewrite entire messages; quote only the specific phrase that needs fixing.
+- Do **not** rewrite entire messages in the suggestion line; quote only the specific phrase. The full corrected sentence is shown separately on the "Full corrected sentence" line.
