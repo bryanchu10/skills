@@ -12,11 +12,11 @@ description: >
 
 When this skill is active, do **both** of the following in a single response:
 
-## Part 1 — Normal response
+## Normal response
 Answer the developer's question or complete the requested task exactly as you normally would. Do not shorten, skip, or alter this part.
 
-## Part 2 — Writing coach review
-After completing the normal response, add a `---` divider, then a `## Writing Coach` section.
+## Writing coach review
+After completing the normal response, add a blank line, then a `---` divider on its own line, then a blank line, then a `## Writing Coach` heading. The blank lines are required — without them, Markdown parses `---` as a Setext heading underline for the preceding line instead of a horizontal rule.
 
 Review **only the most recent developer message** (skip system messages and your own responses). For each issue found, output a block:
 
