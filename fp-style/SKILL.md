@@ -3,9 +3,9 @@ name: fp-style
 description: >
   Reviews TypeScript code for if/else-heavy or imperative control flow and suggests idiomatic
   replacements using ts-pattern (exhaustive matching) and neverthrow (Result/Option), plus
-  broader FP practices (immutability, pure functions, composition). Can also be invoked before
-  or during writing/editing code, so Claude follows these principles while authoring, not only
-  when reviewing afterward.
+  broader FP practices (immutability, pure functions, composition, newspaper-style top-down
+  ordering). Can also be invoked before or during writing/editing code, so Claude follows these
+  principles while authoring, not only when reviewing afterward.
   TRIGGER when: user explicitly invokes /fp-style — either (1) to review a diff/file for
   if-else-heavy or imperative patterns, or (2) to have Claude write/edit code following FP style
   with ts-pattern/neverthrow.
@@ -48,6 +48,12 @@ blanket ban on `if`.
    is really a data transformation rather than genuinely sequential side effects.
 5. **Sequential imperative steps → composition/pipelines** when the sequence represents a data
    pipeline.
+6. **Function/module ordering → newspaper style.** Within a file, order functions top-down by
+   level of abstraction: the entry point / exported orchestration function first, followed by the
+   functions it calls, then *their* helpers, and so on — mirroring a newspaper article (headline
+   and lede first, supporting detail after). Flag a file where a low-level helper is defined above
+   the higher-level function that uses it, forcing the reader to jump backward to understand the
+   flow.
 
 ## Known pitfall — ts-pattern handlers don't inherit strict object checks
 
